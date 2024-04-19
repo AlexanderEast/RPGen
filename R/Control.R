@@ -15,6 +15,7 @@
 #' @export  pophouse.csv
 #' @example RPGen.run("run1.txt")
 
+
 RPGen.run = function(runfile=NULL) {
   
   # setup 
@@ -74,17 +75,15 @@ ahsmismatch<- data.frame("Pool" = ahsadded,
 
 if (length(ahspools > 0) & length(recspools > 0)){
   mismatchedhousing <<- list("AHS" = ahsmismatch, "RECS" = recsmismatch)
-  cat(" See mismatchedhousing list for generated persons (PUMS) for which no houses were available (AHS and RECS).\n")
+  cat(" See mismatchedhousing list in Global Environment for generated persons (PUMS) for which no houses were available (AHS and RECS).\n")
 } else if (length(ahspools < 0) & length(recspools > 0)){
   mismatchedhousing <<- recsmismatch
-  cat(" See mismatchedhousing dataframe for generated persons (PUMS) for which no houses were available from RECS.\n")
+  cat(" See mismatchedhousing dataframe in Global Environment for generated persons (PUMS) for which no houses were available from RECS.\n")
 } else if (length(ahspools > 0) & length(recspools < 0)){
   mismatchedhousing <<-ahsmismatch
-  cat(" See mismatchedhousing dataframe for generated persons (PUMS) for which no houses were available from AHS.\n")
+  cat(" See mismatchedhousing dataframe in Global Environment for generated persons (PUMS) for which no houses were available from AHS.\n")
 }
 
-  
-  
   cat(" \n")
   gc()
   cat(" Housing generator completed: R object = 'pophouse', filename =",filename,"\n")
@@ -92,5 +91,3 @@ if (length(ahspools > 0) & length(recspools > 0)){
 }  
 
 RPGen.run()
-
-

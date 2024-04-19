@@ -12,7 +12,8 @@ requiredpackages<-  c("data.table",
                       "msm",
                       "truncnorm",
                       "survey",
-                      "downloader")
+                      "downloader",
+                      "remotes")
 
 neededpackages<-setdiff(requiredpackages,rownames(installed.packages()))
 
@@ -25,10 +26,17 @@ library("dplyr")
 library("dtplyr")
 library("ggplot2")
 library("bit64")
-library("httk")
 library("msm")
 library("truncnorm")
 library("survey")
 library("downloader")
-
+library("remotes")
 rm(requiredpackages,neededpackages)
+
+# 2024 Patch - RPGen Requires httk 2.0.3.
+
+install_version("httk", "2.0.3")
+packageVersion("httk")
+
+# ____________________________
+

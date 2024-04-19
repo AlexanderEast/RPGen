@@ -65,7 +65,7 @@ get.randoms = function(var,n,seeds,varlist,flag) {
   b <- 2*match(var,varlist)-1+off
   if(off==0) off<- -1
   if(is.na(b)) stop(var," not found")
-  set.seed(seeds[b:(b-off)],"Marsaglia-Multicarry")
+  suppressWarnings(set.seed(seeds[b:(b-off)],"Marsaglia-Multicarry")) # 2024 - suppress warnings. 
   return(runif(n))
 }
 
