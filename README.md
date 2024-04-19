@@ -2,6 +2,14 @@
 
 This repository contains scripts, input files, and some example 
 output files for the Residential Population Generator, an R-based tool to generate synthetic human residental populations to use in making estimates of near-field chemical exposures. This tool is most readily adapted for using in the workflow for CHEM, the Combined Human Exposure Model, avaialable in two other GitHub repositories in the HumanExposure project, including ProductUseScheduler and source2dose. CHEM is currently best suited to estimating exposure to product use. Outputs from RPGen are translated into ProductUseScheduler, which with subsequent outputs used in source2dose. Please see documentation for those modules in the appropriate repositories.  
+## Updates
+
+### 4/18/2024
+Reverted to version 2.0.3 of httk. <b> RPGen will uninstall your current version of httk and download 2.0.3.  </b> Also added Example to output with n = 1000, ages 2-65, seed = 123, all regions and states.
+
+
+
+## Relevant Information
 
 Detailed information about this module is being included in the following manuscript, currently in preparation:
 East et al. 2020. The Residential Population Generator(RPGen): A tool to parameterize residential, demographic, and physiological data to model intraindividual exposure, dose, and risk.
